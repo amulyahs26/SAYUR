@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Clock</title>
+    <link rel="stylesheet" href="/clock/styles.css">
+
+</head>
+<body>
+    <h1>Analog Clock</h1>
+    <div class="clock">
+
+        <div class="clock-face">
+            <div class="number number1">1</div>
+            <div class="number number2">2</div>
+            <div class="number number3">3</div>
+            <div class="number number4">4</div>
+            <div class="number number5">5</div>
+            <div class="number number6">6</div>
+            <div class="number number7">7</div>
+            <div class="number number8">8</div>
+            <div class="number number9">9</div>
+            <div class="number number10">10</div>
+            <div class="number number11">11</div>
+            <div class="number number12">12</div>
+            <div class="hand hour-hand"></div>
+            <div class="hand min-hand"></div>
+            <div class="hand second-hand"></div>
+        </div>
+    </div>
+    
+</body>
+
+<script>
+const secondHand = document.querySelector('.second-hand');
+const minuteHand = document.querySelector('.min-hand');
+const hourHand = document.querySelector('.hour-hand');
+
+function setDate() {
+    const now = new Date();
+    const seconds = now.getSeconds();
+    const minutes = now.getMinutes();
+    const hours = now.getHours();
+
+    // Calculate the degrees for each hand
+    const secondDegree = ((seconds / 60) * 360) + 90;
+    const minuteDegree = ((minutes / 60) * 360) + 90;
+    const hourDegree = ((hours % 12) / 12 * 360) + ((minutes / 60) * 30) + 90;
+
+    // Disable transition temporarily when resetting from 59 to 0 seconds
+    if (seconds === 0) {
+        secondHand.style.transition = 'none'; // Disable transition for 0 seconds
+    } else {
+        secondHand.style.transition = 'transform 0.05s ease-in-out'; // Smooth transition
+    }
+
+    // Apply the rotation to the hands
+    secondHand.style.transform = `rotate(${secondDegree}deg)`;
+    minuteHand.style.transform = `rotate(${minuteDegree}deg)`;
+    hourHand.style.transform = `rotate(${hourDegree}deg)`;
+
+    // Re-enable transitions after the reset
+    if (seconds === 0) {
+        setTimeout(() => {
+            secondHand.style.transition = 'transform 0.05s ease-in-out'; // Re-enable transition
+        }, 50); // Small delay to avoid flickering
+    }
+
+    console.log(`Hours: ${hours}, Minutes: ${minutes}, Seconds: ${seconds}`);
+}
+
+setInterval(setDate, 1000);
+
+
+</script>
+
+</html>
