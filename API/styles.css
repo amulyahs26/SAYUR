@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f4;
+    color: #1d1919;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+.img {
+    background-image: url('https://t4.ftcdn.net/jpg/03/03/54/93/360_F_303549337_gi8g9bnnm44FBY5xqxejNdThBSKIi28E.jpg');
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.img1 {
+    background-image: url('https://www.icegif.com/wp-content/uploads/2023/07/icegif-1076.gif');
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.joke-box {
+    background-color: #f8d7d7d3;
+    color: #100d0d;
+    border-radius: 8px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.joke-box p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.joke-box button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #1f1919;
+    background-color: #ba3a3a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.joke-box button:hover {
+    background-color: #cd6969;
+}
+
+.loading,
+.error {
+    font-size: 1.2em;
+    color: #100d0d;
+}
