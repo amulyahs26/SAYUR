@@ -17,5 +17,15 @@ A simple, user-friendly To-Do List web application that allows users to add, edi
 - **CSS**: Styling and layout of the app, including a centered container and styled buttons.
 - **JavaScript**: Logic for CRUD operations, `localStorage` management, and filtering.
 
+All the tasks:
+![image](https://github.com/user-attachments/assets/2fdbc2b8-fcb4-40c8-affd-704af81960e6)
+
+Completed tasks:
+![image](https://github.com/user-attachments/assets/86843f6c-1672-4b9d-9a79-cfd47f32f8e4)
+
+Active tasks:
+![image](https://github.com/user-attachments/assets/b711461c-bbae-4167-8932-9def4d6cb8c3)
+
+
 
 
